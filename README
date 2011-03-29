@@ -1,0 +1,3 @@
+This App should display markers on a map representing pumping stations.
+These markers will be colour-coded based on the status of these stations,
+and clickable to get further information.
