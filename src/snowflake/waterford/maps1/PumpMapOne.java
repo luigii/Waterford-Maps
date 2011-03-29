@@ -27,10 +27,19 @@ public class PumpMapOne extends MapActivity {
         mapOverlays = mapView.getOverlays();
         drawable = this.getResources().getDrawable(R.drawable.green_dot_small);
         itemizedOverlay = new StatusOverlay(drawable, context);
+        GeoPoint point = new GeoPoint(52256667, -7129167);
+        GeoPoint point2 = new GeoPoint(52256672, -7129173);
+        OverlayItem pointmarker = new OverlayItem(point, "Pumphouse 1", "this is a sample");
+        OverlayItem pointmarker2 = new OverlayItem(point2, "Pumphouse 2", "More Samples");
+        itemizedOverlay.addOverlay(pointmarker);
+        itemizedOverlay.addOverlay(pointmarker2);
+        mapOverlays.add(itemizedOverlay);
     }
     
-    GeoPoint point = new GeoPoint(53344400, -62577000);
-    OverlayItem pointmarker = new OverlayItem(point, "", "");
-    //itemizedOverlay.addOverlay(pointmarker);
+    //GeoPoint point = new GeoPoint(52256667, -7129167);
+    //GeoPoint point2 = new GeoPoint(52256672, -7129173);
+    //OverlayItem pointmarker = new OverlayItem(point, "", "");
+    //OverlayItem pointmarker2 = new OverlayItem(point2, "", "");
+    //itemizedOverlay.addOverlay(OverlayItem pointmarker = new OverlayItem(point, "", ""));
     //mapOverlays.add(itemizedOverlay);
 }

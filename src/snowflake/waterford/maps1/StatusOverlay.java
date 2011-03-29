@@ -9,14 +9,15 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.OverlayItem;
 
-@SuppressWarnings("rawtypes")
-public class StatusOverlay extends ItemizedOverlay {
+public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
 	private ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
 	Context mContext;
 	
 	
 	public StatusOverlay(Drawable defaultMarker, Context context) {
 		super(boundCenterBottom(defaultMarker));
+		mOverlays = new ArrayList<OverlayItem>();
+        populate();
 		mContext = context;
 	}
 
