@@ -15,7 +15,7 @@ public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
 	
 	
 	public StatusOverlay(Drawable defaultMarker, Context context) {
-		super(boundCenterBottom(defaultMarker));
+		super(boundCenter(defaultMarker));
 		mOverlays = new ArrayList<OverlayItem>();
         populate();
 		mContext = context;
