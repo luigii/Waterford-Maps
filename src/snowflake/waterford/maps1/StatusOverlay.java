@@ -11,9 +11,11 @@ import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.OverlayItem;
 
 public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
+	//mOverlays is an arraylist of all the OverlayItems controlled by this StatusOverlay
 	private ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
 	Context mContext;
 
+	
 
 	public StatusOverlay(Drawable defaultMarker, Context context) {
 		super(boundCenter(defaultMarker));
@@ -39,6 +41,8 @@ public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
 
 	@Override
 	protected boolean onTap(int index) {
+		//This method controls the drawing of AlertDialog boxes when
+		//a location is tapped on the map
 		OverlayItem item = mOverlays.get(index);
 		AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(mContext);
 		dialogbuilder.setTitle(item.getTitle())
@@ -54,7 +58,4 @@ public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
 		return true;
 	}
 
-	//void onCreateDialog(){
-		//
-	//}
 }
