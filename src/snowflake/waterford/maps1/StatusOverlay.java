@@ -1,5 +1,6 @@
 package snowflake.waterford.maps1;
-
+//including code from Overlay example
+//at http://developer.android.com/resources/tutorials/views/hello-mapview.html
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
@@ -30,31 +31,31 @@ public class StatusOverlay extends ItemizedOverlay<OverlayItem>{
 	}
 
 	@Override
-	protected OverlayItem createItem(int i) {
+		protected OverlayItem createItem(int i) {
 		return mOverlays.get(i);
 	}
 
 	@Override
-	public int size() {
+		public int size() {
 		return mOverlays.size();
 	}
 
 	@Override
-	protected boolean onTap(int index) {
+		protected boolean onTap(int index) {
 		//This method controls the drawing of AlertDialog boxes when
 		//a location is tapped on the map
 		OverlayItem item = mOverlays.get(index);
 		AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(mContext);
 		dialogbuilder.setTitle(item.getTitle())
-		.setCancelable(true)
-		.setMessage(item.getSnippet())
-		.setNegativeButton("Back", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();
-			}
-		})
-		.create()
-		.show();
+			.setCancelable(true)
+			.setMessage(item.getSnippet())
+			.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				})
+			.create()
+			.show();
 		return true;
 	}
 
